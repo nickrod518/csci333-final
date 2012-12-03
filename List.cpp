@@ -34,8 +34,10 @@ int main (int argc, char** argv) {
     }
 
     cout << "NAME" << "\t: " << "OCCURRENCES" << endl;
-    for (it = list.begin(); it != list.end(); ++it)
-      cout << (*it).first << " \t: " << (*it).second << endl;
+    for (it = list.begin(); it != list.end(); ++it) {
+      if ((*it).second >= atoi(argv[2]))
+        cout << (*it).first << " \t: " << (*it).second << endl;
+    }
   }
 
   return 0;
