@@ -14,3 +14,4 @@ clean:
 	rm -f list;
 	rm -f words;
 	rm -f test;
+	rm -f data;
