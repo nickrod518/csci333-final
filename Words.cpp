@@ -13,10 +13,11 @@ using std::pair;
 
 int main (int argc, char** argv) {
   if (argc != 4) {
-    cout << "Usage: list [in file] [out file] [computed results]" << endl;
+    cout << "Usage: list [in file] [out file] [results file]" << endl;
   } else {
     cout << "in file: " << argv[1] << endl;
     cout << "out file: " << argv[2] << endl;
+    cout << "results file: " << argv[3] << endl;
    
     map<string, int> words;
     map<int, string> sortedWords;
@@ -26,7 +27,7 @@ int main (int argc, char** argv) {
     int totalWords = 0;
     ifstream ifile(argv[1]);
     ofstream ofile(argv[2]);
-    ofstream cfile(argv[3]);
+    ofstream rfile(argv[3]);
 
     // store words in dictionary
     if (ifile.is_open()) {
@@ -59,11 +60,11 @@ int main (int argc, char** argv) {
     }
 
     // calculate unique words and lexical diversity and store in new file
-    if (cfile.is_open()) {
-      while(cfile.good()) {
-        cfile << "unique words: " << words.size() << endl;
-        cfile << "lexical diversity: " << totalWords / words.size() << endl;
-        cfile.close();
+    if (rfile.is_open()) {
+      while(rfile.good()) {
+        rfile << "unique words: " << words.size() << endl;
+        rfile << "lexical diversity: " << totalWords / words.size() << endl;
+        rfile.close();
       }
     }
   }
