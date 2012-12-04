@@ -33,10 +33,22 @@ int main (int argc, char** argv) {
       }
     }
 
-    cout << "NAME" << "\t: " << "OCCURRENCES" << endl;
+    cout << endl;
+    cout << "***************" << endl;
+    cout << "** NICE LIST **" << endl;
+    cout << "***************" << endl;
     for (it = list.begin(); it != list.end(); ++it) {
       if ((*it).second >= atoi(argv[2]))
-        cout << (*it).first << " \t: " << (*it).second << endl;
+        cout << (*it).first << endl;
+    }
+
+    cout << endl;
+    cout << "XXXXXXXXXXXXXXXXXX" << endl;
+    cout << "XX NAUGHTY LIST XX" << endl;
+    cout << "XXXXXXXXXXXXXXXXXX" << endl;
+    for (it = list.begin(); it != list.end(); ++it) {
+      if ((*it).second < atoi(argv[2]))
+        cout << (*it).first << endl;
     }
   }
 
