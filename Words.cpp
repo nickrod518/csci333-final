@@ -22,19 +22,19 @@ int main (int argc, char** argv) {
     map<int, string> sortedWords;
     map<string, int>::iterator it;
     map<int, string>::iterator it2;
-    string line;
+    string word;
     ifstream ifile(argv[1]);
     ofstream ofile(argv[2]);
 
     // store words in dictionary
     if (ifile.is_open()) {
       while(ifile.good()) {
-        getline(ifile, line);
+        getline(ifile, word, ' ');
         
-        if (words.count(line))
-          words[line]++;
+        if (words.count(word))
+          words[word]++;
         else
-          words.insert(pair<string, int>(line, 1));
+          words.insert(pair<string, int>(word, 1));
       }
     }
 
@@ -48,7 +48,7 @@ int main (int argc, char** argv) {
     if (ofile.is_open()) {
       while(ofile.good()) {
         for (it2 = sortedWords.begin(); it2 != sortedWords.end(); ++it2)
-          ofile << (*it2).second << endl;
+          ofile << (*it2).second << " : " << (*it2).first << endl;
         ofile.close();
       }
     }
