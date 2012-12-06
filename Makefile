@@ -14,4 +14,5 @@ clean:
 	rm -f list;
 	rm -f words;
 	rm -f test;
-	rm -f data;
+	rm -f wordsTweeted;
+	rm -f calculatedData;

@@ -12,12 +12,10 @@ using std::map;
 using std::pair;
 
 int main (int argc, char** argv) {
-  if (argc != 4) {
-    cout << "Usage: list [in file] [out file] [results file]" << endl;
+  if (argc != 2) {
+    cout << "Usage: list [input file]" << endl;
   } else {
-    cout << "in file: " << argv[1] << endl;
-    cout << "out file: " << argv[2] << endl;
-    cout << "results file: " << argv[3] << endl;
+    cout << "input file: " << argv[1] << endl;
    
     map<string, int> words;
     map<int, string> sortedWords;
@@ -26,8 +24,8 @@ int main (int argc, char** argv) {
     string word;
     int totalWords = 0;
     ifstream ifile(argv[1]);
-    ofstream ofile(argv[2]);
-    ofstream rfile(argv[3]);
+    ofstream ofile("wordsTweeted");
+    ofstream rfile("calculatedData");
 
     // store words in dictionary
     if (ifile.is_open()) {
